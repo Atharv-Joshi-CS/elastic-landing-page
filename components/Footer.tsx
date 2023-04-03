@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer = (props : any) => {
     return (
         <h2>Footer</h2>
     );
