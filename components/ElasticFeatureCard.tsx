@@ -1,32 +1,34 @@
+import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss";
 
 const ElasticFeatureCard = (props : any) => {
     const {data} = props;
     console.log(data);
     
     return (
-        <>
+        <div className={styles.feature_card}>
         <div>
-            <img src={data.logo.url} alt=""/>
-            <h1>{data.title}</h1>
-            <h2>{data.subtitle}</h2>
-            <h3>{data.description}</h3>
-            <a href={data.cta.href}>{data.cta.title}</a>
-            <div>
-                <p>{data.testimonial.value_proposition}</p>
-                <div>
-
+            <div className={styles.feature_header}>
+                <img src={data.logo.url} alt=""/>
+                <p>{data.title}</p>
+            </div>
+            <p className={styles.subtitle}>{data.subtitle}</p>
+            <p className={styles.description}>{data.description}</p>
+            <a className={styles.button_primary} href={data.cta.href}>{data.cta.title}</a>
+            <div className={styles.testimonial}>
+                <p className={styles.value_proposition}>{data.testimonial.value_proposition}</p>
+                <div className={styles.logo_position}>
                     {data.testimonial.logo != null ? <img src={data.testimonial.logo.url} alt=""/> : <></>}
                     <p>{data.testimonial.employee_position}</p>
                 </div>
             </div>
         </div>
         <div>
-            {data.video != null ? 	<video width="640" height="360" autoPlay muted loop>
+            {data.video != null ? 	<video width="640" height="480" autoPlay muted loop>
 		<source src={data.video.url} type="video/mp4"/>
 		Your browser does not support the video tag.
-	</video> : <></>}
+	</video> : <div className={styles.placeholder}></div>}
         </div>
-        </>
+        </div>
     );
 }
 

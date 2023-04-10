@@ -1,0 +1,136 @@
+@use "../constants";
+
+.footer{
+    background-color: constants.$footer-bg;
+    padding: 20px;
+    }
+
+.hr{
+     border-color: constants.$tertiary-text-color;
+     margin: 50px 0px;
+}
+
+
+.section_navigation_links{
+    p{
+        color: constants.$white;
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .links_container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    a{
+        color: constants.$white;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 5px 0px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.snl_outer_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.snl_inner_container{
+    margin-left: 150px;
+}
+
+.footer_section1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.newsletter{
+    color: constants.$white;
+    width: 450px;
+    span{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+.terms_and_conditions{
+    margin-top: 25px;
+}
+
+.button_secondary{
+    color: constants.$white;
+    background-color: constants.$accent-color;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 30px 0px;
+    padding: 15px 35px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: constants.$dark-accent-color;
+      }
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+    color: constants.$white;
+    font-weight: 800;
+    margin-top: 50px;
+    align-items: center;
+    p{
+        margin-right: 40px;
+    }
+}
+
+.social_button{
+    margin: 0px 15px;
+}
+
+.footer_cta_copyright{
+    color: constants.$white;
+    display: flex;
+    flex-direction: column;
+align-items: end;
+    span{
+        color: constants.$white;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    a{
+        color: constants.$white;
+        text-decoration: none;
+        margin-left: 30px;
+        font-size: 14px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.copyright_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.copyright{
+    margin-top: 50px;
+    color: constants.$white;
+    font-size: 14px;
+    width: 800px;
+}
+
+.logo{
+    width: 60px;
+}

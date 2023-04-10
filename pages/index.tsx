@@ -3,7 +3,8 @@ import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import LandingPage from '@/components/LandingPage';
 import APICalls from '@/utilities/elastic_api_calls';
-import styles from '@/styles/Home.module.css'
+// import type globalStylesType from "../styles/globals/globals.module"
+// import styles from "../styles/globals/globals.module.scss"
 
 interface LandingPageData {
   headerResponse : any,
@@ -15,12 +16,12 @@ interface LandingPageData {
 
 const Home = (props : LandingPageData) => {
   return (
-    <>
+    <div>
     <Header data = {props.headerResponse}></Header>
     <Banner data = {props.bannerResponse}></Banner>
     <LandingPage data = {props.landingPageResponse}></LandingPage>
     <Footer data = {props.footerResponse}></Footer>
-    </>
+    </div>
   )
 }
 

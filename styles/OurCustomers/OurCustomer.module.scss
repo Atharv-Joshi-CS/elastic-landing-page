@@ -1,0 +1,63 @@
+@use "../constants";
+
+@mixin nospacing(){
+    padding:  0px;
+    margin: 0px;
+}
+
+.ourCustomers_container{
+    margin-top: 130px;
+    background-color: constants.$section-bg;
+    padding: 100px 0px 70px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    @include nospacing();
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.subtitle {
+    @include nospacing();
+    font-size: 18px;
+    font-weight: 500;
+    color: constants.$secondary-text-color;
+    margin: 20px 0px;
+}
+
+.customerCardList_container{
+    @include nospacing();
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row; 
+
+}
+
+.customer_card{
+    margin: 0px 15px;
+    border-radius: 15px;
+    padding: 3px 30px;
+    background-color: constants.$white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.button_primary{
+    color: constants.$accent-color;
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 20px 10px;
+    &:hover {
+        color: constants.$dark-accent-color;
+        text-decoration: underline;
+      }
+}

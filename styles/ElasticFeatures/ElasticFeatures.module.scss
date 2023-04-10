@@ -1,0 +1,113 @@
+@use "../constants";
+
+@mixin nospacing(){
+    margin: 0px;
+    padding: 0px;
+}
+
+.elastic_features{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 130px;
+}
+
+.title {
+    @include nospacing();
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.subtitle {
+    @include nospacing();
+    font-size: 18px;
+    font-weight: 500;
+    color: constants.$secondary-text-color;
+    margin: 20px 330px;
+    text-align: center;
+}
+
+.feature_card{
+    width: 96vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+
+    .placeholder{
+        width: 640px;
+        height: 320px;
+    }
+
+    .feature_header{
+        @include nospacing();
+        display: flex;
+        flex-direction: row;
+        p {
+            font-size: 24px;
+            margin-left: 15px;
+            font-weight: 700;
+        }
+    }
+
+    .subtitle{
+        @include nospacing();
+        text-align: left;
+        font-size: 42px;
+        color: constants.$primary-text-color;
+        font-weight: 900;
+        width: 400px;
+    }
+
+    .description {
+        @include nospacing();
+        font-size: 18px;
+        font-weight: 500;
+        color: constants.$secondary-text-color;
+        margin: 20px 0px;
+        width: 480px;
+    }
+
+    .button_primary{
+        color: constants.$accent-color;
+        font-weight: 800;
+        font-size: 18px;
+        text-decoration: none;
+        margin: 20px 0px;
+        &:hover {
+            color: constants.$dark-accent-color;
+            text-decoration: underline;
+          }
+    }
+
+    .testimonial{
+        background-color: constants.$section-bg;
+        margin-top: 25px;
+        width: 500px;
+        padding: 10px;
+        border-radius: 10px;
+        .value_proposition{
+            @include nospacing();
+            font-size: 18px;
+            font-weight: 500;
+            color: constants.$secondary-text-color;
+            width: 390px;
+        }
+
+        .logo_position{
+            display: flex;
+            flex-direction: row;
+
+            img{
+                width: 100px;
+            }
+
+            p{
+                font-weight: 800;
+                margin-left: 20px;
+            }
+        }
+    }
+}

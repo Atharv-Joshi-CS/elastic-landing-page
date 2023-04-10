@@ -1,16 +1,17 @@
+import styles from "../styles/StarterProducts/StarterProducts.module.scss";
 
 const StarterProductCard = (props : any) => {
     const {data} = props;
     console.log(data);
     
     return (
-        <>
-        <div>
-            <img src={data.logo.url} alt=""/>
-            <h1>{data.product_name}</h1>
+        <div className={styles.starter_product_card}>
+            <img src={data.logo.url} alt="logo"/>
+            <div className={styles.subsection}>
+                <h3 className={styles.card_title}>{data.product_name}</h3>
+                <p className={styles.card_subtitle}>{data.description}</p>
+            </div>
         </div>
-        <h3>{data.description}</h3>
-        </>
     );
 }
 

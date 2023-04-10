@@ -1,0 +1,41 @@
+@use "../constants";
+
+.banner_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 15vw;
+}
+
+.title{
+    text-align: center;
+    font-size: 92px;
+    margin: 50px 0px 0px 0px;
+    color: constants.$primary-text-color;
+    // background-color: aqua;
+}
+
+.subtitle{
+    text-align: center;
+    color: constants.$secondary-text-color;
+    font-size: 19px;
+    padding: 0px 15vw;
+    margin-bottom: 40px;
+    // background-color: blueviolet;
+}
+
+.button_secondary{
+    color: constants.$white;
+    background-color: constants.$accent-color;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 20px 45px;
+    border-radius: 5px;
+    &:hover {
+        background-color: constants.$dark-accent-color;
+      }
+    box-shadow: 0px 2px 5px 2px rgba(0, 0.2, 0, 0.2);
+}
