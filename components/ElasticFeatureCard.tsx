@@ -28,13 +28,19 @@ const ElasticFeatureCard = (props : any) => {
             </div>
         </div>
     </div>
-
     const featureVideo = 
     <div>
         {data.video != null ? 	<video width="640" height="480" autoPlay muted loop>
         <source src={data.video.url} type="video/mp4"/>
         Your browser does not support the video tag.
-        </video> : <div className={styles.placeholder}></div>}
+        </video> :       <iframe
+        width="640"
+        height="480"
+        src={`https://www.youtube.com/embed/O81-mgSkBFk`}
+        title="YouTube video player"
+        allow="autoplay;"
+        allowFullScreen
+      ></iframe> }
     </div>
 
     const featureBlock = data.video_on_left == true ? 
