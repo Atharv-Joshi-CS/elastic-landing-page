@@ -2,7 +2,6 @@ import styles from "../styles/Footer/Footer.module.scss";
 
 const NewsLetter = (props : any) => {
     const {data} = props;
-    // console.log(data);
     
     return (
         <div className={styles.newsletter}>
