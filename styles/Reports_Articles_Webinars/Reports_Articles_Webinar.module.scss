@@ -1,9 +1,5 @@
 @use "../constants";
-
-// .my-container {
-//     --title-size: 0;
-// }
-  
+  @import "../shared_styles";
 
 @mixin nospacing(){
     padding:  0px;
@@ -43,8 +39,7 @@
 .rawcard{
     display: flex;
     flex-direction: column;
-    margin: 0px 5px;
-    transition: transform 0.2s ease-in-out;
+    margin: 0px 25px;
     &:hover{
 
         .category, .type1_subtitle, .type1_title, .type3_title{
@@ -55,7 +50,23 @@
             color: constants.$accent-color;
         }
 
+        .button_primary{
+                color: constants.$dark-accent-color;
+                text-decoration: underline;
+        
+                img{
+                    @extend .shared_right_arrow_hover;
+                }
+                
+              }
+        }
+
     }
+
+
+.raw_content{
+    height: 240px;
+    // background-color: aliceblue;
 }
 
 .category{
@@ -64,6 +75,8 @@
     letter-spacing: 1.5px;
     color: constants.$tertiary-text-color;
     font-weight: 600;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
 }
 
 .section_title{
@@ -80,6 +93,9 @@
     margin-top: 20px;
     font-size: 29px;
     font-weight: 800;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    color: constants.$primary-text-color;
 }
 
 .type2_title{
@@ -87,6 +103,7 @@
     margin-top: 20px;
     font-size: 18px;
     font-weight: 800;
+    color: constants.$primary-text-color;
 }
 
 .type3_title{
@@ -96,6 +113,8 @@
     font-weight: 900;
     color: constants.$white;
     font-size: 28px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
 }
 
 .type1_subtitle{
@@ -104,6 +123,8 @@
     font-size: 18px;
     font-weight: 500;
     color: constants.$secondary-text-color;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
 }
 
 .type2_subtitle{
@@ -126,15 +147,23 @@
     width: 30px;
 }
 
+.card_button{
+    text-decoration: none;
+}
+
 .button_primary{
     color: constants.$accent-color;
     font-weight: 800;
     font-size: 18px;
     text-decoration: none;
-    &:hover {
-        color: constants.$dark-accent-color;
-        text-decoration: underline;
-      }
+}
 
-    margin-top: 50px;
+.button_display_content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    img{
+        margin-left: 8px;
+        @extend .shared_right_arrow;
+    }
 }

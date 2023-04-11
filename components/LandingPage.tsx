@@ -6,16 +6,25 @@ import StarterProducts from "./StarterProducts";
 const LandingPage = (props : any) => {
     const entry = props.data.entry;
     const modularBlocksJsonData = entry.modular_blocks;
-    // console.log(modularBlocksJsonData);
+    console.log(modularBlocksJsonData);
+
+    let blocks = Array.from(modularBlocksJsonData.map((data : any) => {
+        switch(Object.keys(data)[0]){
+            case 'reports_events_webinars':
+                return <ReportsEventsWebinars data = {data.reports_events_webinars} type = {data.reports_events_webinars.block_type}/>;
+            case 'our_customers':
+                return <OurCustomers data = {data.our_customers}/>;
+            case 'features_of_elastic_product':
+                return <ElasticFeatures data = {data.features_of_elastic_product}/>;
+            case 'starter_products':
+                return <StarterProducts data =  {data.starter_products} />;
+            default :
+                return <StarterProducts data =  {data.starter_products} />;;
+        }
+    } ));
     return (
         <>
-            <ReportsEventsWebinars data = {modularBlocksJsonData[0].reports_events_webinars} type = {1}/>
-            <OurCustomers data = {modularBlocksJsonData[1].our_customers}/>
-            <ElasticFeatures data = {modularBlocksJsonData[2].features_of_elastic_product}/>
-            <StarterProducts data =  {modularBlocksJsonData[3].starter_products} />
-            <ReportsEventsWebinars data = {modularBlocksJsonData[4].reports_events_webinars} type = {2}/>
-            <ReportsEventsWebinars data = {modularBlocksJsonData[5].reports_events_webinars} type = {3}/>
-
+        {blocks}
         </>
     );
 }

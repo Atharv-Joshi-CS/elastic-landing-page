@@ -9,8 +9,7 @@ const Footer = (props : any) => {
     }} = props;
     
     const sectionNavigationLinks : React.ReactNode[] = Array.from((entry.section_navigation_links).map((data : any) => <SectionNavigationLinks data = {data}/>));
-    
-    console.log(entry);
+
     return (
         <div className={styles.footer}>
             <div className={styles.footer_section1}>
@@ -35,7 +34,7 @@ const Footer = (props : any) => {
                 <div className={styles.copyright}>
                     <span  dangerouslySetInnerHTML={{ __html: entry.copyright }} />
                 </div>
-                <img className={styles.logo} src={entry.logo.url} alt="alternate elastic logo" />
+                <img className={styles.elastic_logo} src={entry.logo.url} alt="alternate elastic logo" />
             </div>
         </div>
     );

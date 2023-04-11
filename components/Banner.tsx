@@ -3,7 +3,6 @@ import styles from "../styles/Banner/Banner.module.scss"
 
 const Banner = (props : any) => {
     const entry = props.data.entry;
-    console.log(entry);
     return (
         <div className={styles.banner_container}>
             <h1 className={styles.title}>{entry.title}</h1>

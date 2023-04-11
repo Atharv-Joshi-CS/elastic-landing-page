@@ -7,11 +7,11 @@ const ReportsEventsWebinars = (props : any) => {
     const {data,type} = props;
 
     let rawContainer;
-    if(type == 1){
+    if(type == 'reports_events_webinars'){
         rawContainer = styles.type1_raw_container;
-    }else if(type == 2){
+    }else if(type == 'community'){
         rawContainer = styles.type2_raw_container;
-    }else if(type == 3){
+    }else if(type == 'about_elastic'){
         rawContainer = styles.type3_raw_container;
     }
     

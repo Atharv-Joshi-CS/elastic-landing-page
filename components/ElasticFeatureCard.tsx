@@ -2,7 +2,6 @@ import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss";
 
 const ElasticFeatureCard = (props : any) => {
     const {data} = props;
-    console.log(data);
     
     return (
         <div className={styles.feature_card}>
@@ -13,7 +12,12 @@ const ElasticFeatureCard = (props : any) => {
             </div>
             <p className={styles.subtitle}>{data.subtitle}</p>
             <p className={styles.description}>{data.description}</p>
-            <a className={styles.button_primary} href={data.cta.href}>{data.cta.title}</a>
+            <a className={styles.button_primary} href={data.cta.href}>
+                <div className={styles.button_display_content}>
+                    {data.cta.title}
+                    <img className="arrow-right" src="/static/images/right-arrow.svg" />
+                </div>
+            </a>
             <div className={styles.testimonial}>
                 <p className={styles.value_proposition}>{data.testimonial.value_proposition}</p>
                 <div className={styles.logo_position}>

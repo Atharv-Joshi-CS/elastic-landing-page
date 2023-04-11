@@ -3,8 +3,7 @@ import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import LandingPage from '@/components/LandingPage';
 import APICalls from '@/utilities/elastic_api_calls';
-// import type globalStylesType from "../styles/globals/globals.module"
-// import styles from "../styles/globals/globals.module.scss"
+
 
 interface LandingPageData {
   headerResponse : any,

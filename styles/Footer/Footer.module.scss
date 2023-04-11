@@ -132,5 +132,13 @@ align-items: end;
 }
 
 .logo{
+    width: 20px;
+    height: 20px;
+    border : solid 1px constants.$tertiary-text-color;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+.elastic_logo{
     width: 60px;
 }

@@ -1,6 +1,12 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
+
+  const styleObject = {
+    padding : '0px',
+    margin : '0px'
+  }
+
   return (
     <Html lang="en">
       <Head>

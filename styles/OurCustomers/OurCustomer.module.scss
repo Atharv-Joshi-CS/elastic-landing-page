@@ -1,4 +1,5 @@
 @use "../constants";
+@import "../shared_styles";
 
 @mixin nospacing(){
     padding:  0px;
@@ -59,5 +60,18 @@
     &:hover {
         color: constants.$dark-accent-color;
         text-decoration: underline;
+
+        img{
+            @extend .shared_right_arrow_hover;
+        }
       }
+}
+
+.button_display_content{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 150px;
 }

@@ -12,7 +12,12 @@ const OurCustomers = (props : any) => {
         <div className={styles.customerCardList_container}>
             {customerCardsList}
         </div>
-        <a className={styles.button_primary} href={data.cta.href}>{data.cta.title}</a>
+        <a className={styles.button_primary} href={data.cta.href}>
+            <div className={styles.button_display_content}>
+                {data.cta.title}
+                <img className="arrow-right" src="/static/images/right-arrow.svg" />
+            </div>
+        </a>
     </div>
     );
 }

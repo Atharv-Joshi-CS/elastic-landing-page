@@ -1,35 +1,41 @@
 import type rawStylesType from "@/styles/Reports_Articles_Webinars/Reports_Articles_Webinars.module";
 import styles from "../styles/Reports_Articles_Webinars/Reports_Articles_Webinar.module.scss"
-// import Image from 'next/image';
 
 
 const ReportsEventsWebinarsCard = (props : any) => {
     const {data, type} = props;
-    // console.log(data);
-    console.log(type);
+
     let titleStyle;
     let subtitleStyle
-    if(type == 1){
+    if(type == 'reports_events_webinars'){
         titleStyle = styles.type1_title;
         subtitleStyle = styles.type1_subtitle;
     }
-    else if(type == 2){
+    else if(type == 'community'){
         titleStyle = styles.type2_title;
         subtitleStyle = styles.type2_subtitle;
     }
-    else if(type == 3){
+    else if(type == 'about_elastic'){
         titleStyle = styles.type3_title;
         subtitleStyle = styles.type3_subtitle;
     }
 
     return(
         <div className={styles.rawcard}>
-        <p className={styles.category}>{data.category}</p>
-        {data.logo != null ? <img className={styles.logo} src={data.logo.url} alt=""/> : <></>}
-        <p className={titleStyle}>{data.title}</p>
-        <p className={subtitleStyle}>{data.subtitle}</p>
-        <a className={styles.button_primary} href={data.link.href}>{data.link.title}</a>
-        {/* <Image src="../public/images/right-arrow.svg" alt="right-arrow"  width={500} height={500} /> */}
+            <a className={styles.card_button} href={type == 'reports_events_webinars'  || type == 'about_elastic' ? data.link.href : ""}>
+                <div className={styles.raw_content}>
+                    <p className={styles.category}>{data.category}</p>
+                    {data.logo != null ? <img className={styles.logo} src={data.logo.url} alt="logo"/> : <></>}
+                    <p className={titleStyle}>{data.title}</p>
+                    <p className={subtitleStyle}>{data.subtitle}</p>
+                </div>
+                <a className={styles.button_primary} href={data.link.href}>
+                    <div className={styles.button_display_content}>
+                        { type == 'reports_events_webinars' || type == 'community' ? data.link.title : <></>}
+                        <img className="arrow-right" src={`/static/images/${type == 'about_elastic' ? "arrow-right-white.svg" : 'right-arrow.svg'}`} />
+                    </div>
+                </a>
+            </a>
         </div>
     );
 }

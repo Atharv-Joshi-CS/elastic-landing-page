@@ -4,10 +4,9 @@ import styles from "../styles/Header/Header.module.scss"
 
 const Header = (props : any) => {
     const data = props.data.entry;
-    console.log(data.cta_buttons);
 
-    const navigatonButtons : React.ReactNode[] = Array.from(data.cta_buttons.map((button : any) => <a className={button.button_type === "PRIMARY" ? styles.button_primary : styles.button_secondary } href={button.cta_link.href}>{button.cta_link.title}</a>)) 
-    
+    let navigatonButtons : React.ReactNode[] = Array.from(data.cta_buttons.map((button : any) => <a className={button.button_type === "PRIMARY" ? styles.button_primary : styles.button_secondary } href={button.cta_link.href}>{button.cta_link.title}</a>)) 
+    navigatonButtons.push(<a className={styles.image_button}><img className={styles.image_button} src="/static/images/icon-magnifying-glass-24-blue.svg" alt="search icon" /></a>)
     return (
         <div>
             <div className={styles.header_container}>

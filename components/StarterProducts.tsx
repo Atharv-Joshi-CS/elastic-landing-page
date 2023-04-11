@@ -3,7 +3,6 @@ import styles from "../styles/StarterProducts/StarterProducts.module.scss";
 
 const StarterProducts = (props : any) => {
     const {data} = props;
-    console.log(data);
     const productCards : React.ReactNode[] = Array.from(data.product_card.map((card : any) => <StarterProductCard data = {card}/>));
     
     return (
@@ -14,7 +13,12 @@ const StarterProducts = (props : any) => {
             <div className={styles.product_cards_container}>
                 {productCards}
             </div>
-                <a className={styles.button_primary} href={data.cta.href}>{data.cta.title}</a>
+                <a className={styles.button_primary} href={data.cta.href}>
+                    <div className={styles.button_display_content}>
+                        {data.cta.title}
+                        <img width={25} src="/static/images/right-arrow.svg" />
+                    </div>
+                </a>
         </div>
         </div>
         );
