@@ -3,7 +3,6 @@ import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss"
 import React from "react";
 const ElasticFeatures = (props : any) => {
     const {data} = props;
-    // console.log(data);
 
     const elasticFeaturCardComponents : React.ReactNode[]= Array.from(data.feature_description.map((card : any) => <ElasticFeatureCard data = {card}/>));
     

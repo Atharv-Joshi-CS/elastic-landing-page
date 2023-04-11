@@ -1,6 +1,5 @@
 import React from "react";
 import ReportsEventsWebinarsCard from "./ReportsEventsWebinarsCard";
-// import type rawStylesType from "@/styles/Reports_Articles_Webinars/Reports_Articles_Webinars.module";
 import styles from "../styles/Reports_Articles_Webinars/Reports_Articles_Webinar.module.scss"
 
 const ReportsEventsWebinars = (props : any) => {

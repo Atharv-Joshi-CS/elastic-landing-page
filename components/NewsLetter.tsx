@@ -7,7 +7,7 @@ const NewsLetter = (props : any) => {
     return (
         <div className={styles.newsletter}>
         <h2>{data.title}</h2>
-        <a className={styles.button_secondary} href={data.cta.cta_link.href}>{data.cta.cta_link.title}</a>
+        <a className="secondary_button" href={data.cta.cta_link.href}>{data.cta.cta_link.title}</a>
         <div className={styles.terms_and_conditions}>
         <span dangerouslySetInnerHTML={{ __html: data.terms_and_conditions }} />
         </div>

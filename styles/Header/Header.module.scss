@@ -17,31 +17,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    // background-color: aqua;
     margin: 0px 10px;
-}
-
-.button_primary{
-    color: constants.$secondary-text-color;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0px 10px;
-    &:hover {
-        color: constants.$accent-color;
-      }
-}
-
-.button_secondary{
-    color: constants.$white;
-    background-color: constants.$accent-color;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0px 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    &:hover {
-        background-color: constants.$dark-accent-color;
-      }
 }
 
 .hr{
