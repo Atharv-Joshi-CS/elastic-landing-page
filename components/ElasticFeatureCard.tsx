@@ -2,7 +2,6 @@ import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss";
 
 const ElasticFeatureCard = (props : any) => {
     const {data} = props;
-    console.log(data);
 
     const featureContent =         
     <div>

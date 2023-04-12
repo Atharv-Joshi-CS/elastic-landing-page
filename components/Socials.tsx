@@ -1,5 +1,5 @@
 import styles from "../styles/Footer/Footer.module.scss";
-import Twitter from "../public/images/footer-icon-twitter.svg";
+
 const Socials = (props : any) => {
     const {data} = props;
     

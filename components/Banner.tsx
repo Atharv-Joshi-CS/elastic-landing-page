@@ -1,4 +1,3 @@
-import type bannerStylesType from "../styles/Banner/Banner.module"
 import styles from "../styles/Banner/Banner.module.scss"
 
 const Banner = (props : any) => {

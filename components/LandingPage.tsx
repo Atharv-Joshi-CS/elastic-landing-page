@@ -6,7 +6,6 @@ import StarterProducts from "./StarterProducts";
 const LandingPage = (props : any) => {
     const entry = props.data.entry;
     const modularBlocksJsonData = entry.modular_blocks;
-    console.log(modularBlocksJsonData);
 
     let blocks = Array.from(modularBlocksJsonData.map((data : any) => {
         switch(Object.keys(data)[0]){

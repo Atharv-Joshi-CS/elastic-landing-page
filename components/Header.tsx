@@ -1,5 +1,4 @@
 import React from "react";
-import type headerStylesType from "../styles/Header/Header.module";
 import styles from "../styles/Header/Header.module.scss"
 
 const Header = (props : any) => {
