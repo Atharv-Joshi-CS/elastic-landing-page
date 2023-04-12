@@ -1,4 +1,5 @@
 import StarterProductCard from "./StarterProductCard";
+import PrimaryButton from "./PrimaryButton";
 import styles from "../styles/StarterProducts/StarterProducts.module.scss";
 
 const StarterProducts = (props : any) => {
@@ -13,12 +14,9 @@ const StarterProducts = (props : any) => {
             <div className={styles.product_cards_container}>
                 {productCards}
             </div>
-                <a className={styles.button_primary} href={data.cta.href}>
-                    <div className={styles.button_display_content}>
-                        {data.cta.title}
-                        <img width={25} src="/static/images/right-arrow.svg" />
-                    </div>
-                </a>
+                <div className={styles.arrow_translate}>
+                    <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>
+                </div>
         </div>
         </div>
         );

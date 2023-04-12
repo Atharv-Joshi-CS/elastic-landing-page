@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     padding: 0px 15vw;
+    margin-bottom: 100px;
 }
 
 .title{
@@ -24,6 +25,8 @@
     margin-bottom: 40px;
 }
 
-// box-shadow: 0px 2px 5px 2px rgba(0, 0.2, 0, 0.2);
-// padding: 20px 45px;
-// font-size: 18px;
+.secondary_btn{
+    box-shadow: 0px 2px 5px 2px rgba(0, 0.2, 0, 0.2);
+    padding: 20px 45px;
+    font-size: 18px;
+}

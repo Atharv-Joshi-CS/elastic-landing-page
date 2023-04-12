@@ -51,26 +51,7 @@
     }
 }
 
-.button_primary{
-    color: constants.$accent-color;
-    font-weight: 600;
-    font-size: 18px;
-    text-decoration: none;
-    margin: 20px 10px;
-    &:hover {
-        color: constants.$dark-accent-color;
-        text-decoration: underline;
 
-        img{
-            @extend .shared_right_arrow_hover;
-        }
-      }
-}
-
-.button_display_content{
-    display: flex;
-    align-items: center;
-}
 
 .logo{
     width: 150px;

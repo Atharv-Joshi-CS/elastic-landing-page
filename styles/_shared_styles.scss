@@ -1,8 +1,8 @@
+.shared_right_arrow_hover{
+    transform: translateX(10px);
+}
+
 .shared_right_arrow{
     transform: translateX(0);
     transition: transform 0.3s ease-out;
-}
-
-.shared_right_arrow_hover{
-    transform: translateX(10px);
 }

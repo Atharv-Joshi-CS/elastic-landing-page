@@ -1,3 +1,4 @@
+import PrimaryButton from "./PrimaryButton";
 import styles from "../styles/Reports_Articles_Webinars/Reports_Articles_Webinar.module.scss"
 
 
@@ -6,9 +7,11 @@ const ReportsEventsWebinarsCard = (props : any) => {
 
     let titleStyle;
     let subtitleStyle
+    let arrowtranslateStyle;
     if(type == 'reports_events_webinars'){
         titleStyle = styles.type1_title;
         subtitleStyle = styles.type1_subtitle;
+        arrowtranslateStyle = styles.arrow_translate;
     }
     else if(type == 'community'){
         titleStyle = styles.type2_title;
@@ -17,6 +20,7 @@ const ReportsEventsWebinarsCard = (props : any) => {
     else if(type == 'about_elastic'){
         titleStyle = styles.type3_title;
         subtitleStyle = styles.type3_subtitle;
+        arrowtranslateStyle = styles.arrow_translate;
     }
 
     return(
@@ -28,12 +32,9 @@ const ReportsEventsWebinarsCard = (props : any) => {
                     <p className={titleStyle}>{data.title}</p>
                     <p className={subtitleStyle}>{data.subtitle}</p>
                 </div>
-                <a className={styles.button_primary} href={data.link.href}>
-                    <div className={styles.button_display_content}>
-                        { type == 'reports_events_webinars' || type == 'community' ? data.link.title : <></>}
-                        <img className="arrow-right" src={`/static/images/${type == 'about_elastic' ? "arrow-right-white.svg" : 'right-arrow.svg'}`} />
-                    </div>
-                </a>
+                <div className={arrowtranslateStyle}>
+                    <PrimaryButton hasDisplayText = {type == 'reports_events_webinars' || type == 'community' ? true : false} hasArrow = {true} displayText={type == 'reports_events_webinars' || type == 'community' ? data.link.title : ''} href={data.link.href} imgSrc={`/static/images/${type == 'about_elastic' ? "arrow-right-white.svg" : 'right-arrow.svg'}`}/>
+                </div>
             </a>
         </div>
     );

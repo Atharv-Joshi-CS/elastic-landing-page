@@ -1,4 +1,5 @@
 import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss";
+import PrimaryButton from "./PrimaryButton";
 
 const ElasticFeatureCard = (props : any) => {
     const {data} = props;
@@ -12,12 +13,7 @@ const ElasticFeatureCard = (props : any) => {
             </div>
             <p className={styles.subtitle}>{data.subtitle}</p>
             <p className={styles.description}>{data.description}</p>
-            <a className={styles.button_primary} href={data.cta.href}>
-                <div className={styles.button_display_content}>
-                    {data.cta.title}
-                    <img className="arrow-right" src="/static/images/right-arrow.svg" />
-                </div>
-            </a>
+            <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>
         </div>
         <div className={styles.testimonial}>
             <p className={styles.value_proposition}>{data.testimonial.value_proposition}</p>

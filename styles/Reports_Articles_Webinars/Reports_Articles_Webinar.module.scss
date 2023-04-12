@@ -42,6 +42,12 @@
     margin: 0px 25px;
     &:hover{
 
+        .arrow_translate{
+            img{
+                transform: translateX(10px);
+            }
+        }
+
         .category, .type1_subtitle, .type1_title, .type3_title{
             transform: translateY(-10px);
         }

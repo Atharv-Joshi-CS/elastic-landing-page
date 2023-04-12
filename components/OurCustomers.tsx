@@ -1,5 +1,6 @@
 import React from "react";
 import CustomerCard from "./CustomerCard";
+import PrimaryButton from "./PrimaryButton";
 import styles from "../styles/OurCustomers/OurCustomer.module.scss";
 
 const OurCustomers = (props : any) => {
@@ -12,12 +13,7 @@ const OurCustomers = (props : any) => {
         <div className={styles.customerCardList_container}>
             {customerCardsList}
         </div>
-        <a className={styles.button_primary} href={data.cta.href}>
-            <div className={styles.button_display_content}>
-                {data.cta.title}
-                <img className="arrow-right" src="/static/images/right-arrow.svg" />
-            </div>
-        </a>
+        <PrimaryButton hasDisplayText = {true} hasArrow = {true} displayText={data.cta.title} href={data.cta.href} imgSrc="/static/images/right-arrow.svg"/>
     </div>
     );
 }
