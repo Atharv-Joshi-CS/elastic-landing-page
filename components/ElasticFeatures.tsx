@@ -1,10 +1,10 @@
 import ElasticFeatureCard from "./ElasticFeatureCard";
+import { FeaturesOfElasticProductTD, ElasticFeatureCardTD } from "@/utilities/type_definitions";
 import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss"
 import React from "react";
-const ElasticFeatures = (props : any) => {
-    const {data} = props;
+const ElasticFeatures = ({data} : {data : FeaturesOfElasticProductTD}) => {
 
-    const elasticFeaturCardComponents : React.ReactNode[]= Array.from(data.feature_description.map((card : any) => <ElasticFeatureCard data = {card}/>));
+    const elasticFeaturCardComponents : React.ReactNode[]= Array.from(data.feature_description.map((card : ElasticFeatureCardTD) => <ElasticFeatureCard data = {card}/>));
     
     return (
         <div className={styles.elastic_features}>

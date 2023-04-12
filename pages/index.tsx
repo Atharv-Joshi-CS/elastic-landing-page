@@ -2,34 +2,43 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import LandingPage from '@/components/LandingPage';
-import APICalls from '@/utilities/elastic_api_calls';
+import { HeaderTD, BannerTD, FooterTD, LandingPageTD } from '@/utilities/type_definitions';
+import {getEntries} from "../utilities/elastic_api_calls"
 
 
 interface LandingPageData {
-  headerResponse : any,
-  footerResponse : any,
-  bannerResponse : any,
-  landingPageResponse : any
+  header : HeaderTD,
+  footer : FooterTD,
+  banner : BannerTD,
+  landingPage : LandingPageTD
 }
 
 
-const Home = (props : LandingPageData) => {
+const Home = ({header, footer, banner, landingPage} : LandingPageData) => {  
   return (
     <div>
-    <Header data = {props.headerResponse}></Header>
-    <Banner data = {props.bannerResponse}></Banner>
-    <LandingPage data = {props.landingPageResponse}></LandingPage>
-    <Footer data = {props.footerResponse}></Footer>
+    <Header data = {header}></Header>
+    <Banner data = {banner}></Banner>
+    <LandingPage data = {landingPage}></LandingPage>
+    <Footer data = {footer}></Footer>
     </div>
   )
 }
 
 export async function getStaticProps(){
-  const apiCalls = new APICalls();
+  const header = await getEntries('elastic_header', 'blt2b854e990c511e72', 'en-us');
+  const footer = await getEntries('footer', 'blt9dc59bcd9655739f', 'en-us');
+  const banner = await getEntries('elastic_banner', 'blt7fd0565eb551d1a7', 'en-us');
+  const landingPage = await getEntries('elastic_landing_page', 'blt9794129823ec773b', 'en-us');
+  
 
-  const data = await apiCalls.getLandingPageData();
   return {
-    "props" : data
+    "props" : {
+      header,
+      footer,
+      banner,
+      landingPage
+    }
   };
 }
 

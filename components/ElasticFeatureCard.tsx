@@ -1,8 +1,8 @@
 import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss";
 import PrimaryButton from "./PrimaryButton";
+import { ElasticFeatureCardTD } from "@/utilities/type_definitions";
 
-const ElasticFeatureCard = (props : any) => {
-    const {data} = props;
+const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
 
     const featureContent =         
     <div>

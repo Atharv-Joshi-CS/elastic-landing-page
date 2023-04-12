@@ -1,10 +1,11 @@
 import StarterProductCard from "./StarterProductCard";
 import PrimaryButton from "./PrimaryButton";
+import { StarterProductsTD, StarterProductCardTD } from "@/utilities/type_definitions";
 import styles from "../styles/StarterProducts/StarterProducts.module.scss";
 
-const StarterProducts = (props : any) => {
-    const {data} = props;
-    const productCards : React.ReactNode[] = Array.from(data.product_card.map((card : any) => <StarterProductCard data = {card}/>));
+const StarterProducts = ({data} : {data : StarterProductsTD}) => {
+
+    const productCards : React.ReactNode[] = Array.from(data.product_card.map((card : StarterProductCardTD) => <StarterProductCard data = {card}/>));
     
     return (
         <div className={styles.starter_products}>

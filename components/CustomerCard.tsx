@@ -1,7 +1,6 @@
 import styles from "../styles/OurCustomers/OurCustomer.module.scss";
-
-const CustomerCard = (props : any) => {
-    const {data} = props;
+import { CustomerCardTD } from "@/utilities/type_definitions";
+const CustomerCard = ({data} : {data : CustomerCardTD }) => {
     
     return (
         <div className={styles.customer_card}>

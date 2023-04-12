@@ -1,17 +1,16 @@
 import SectionNavigationLinks from "./SectionNavigationLinks";
 import NewsLetter from "./NewsLetter";
 import Socials from "./Socials";
+import { FooterTD, SectionNavigationLinksTD } from "@/utilities/type_definitions";
 import FooterCTALinks from "./FooterCTAButtons";
 import styles from "../styles/Footer/Footer.module.scss";
 import { useState } from "react";
-const Footer = (props : any) => {
-    const {data : {
-        entry
-    }} = props;
-    
-    const sectionNavigationLinks : React.ReactNode[] = Array.from((entry.section_navigation_links).map((data : any) => <SectionNavigationLinks data = {data}/>));
 
-    const [selectedOption, setSelectedOption] = useState('option1');
+const Footer = ({data} : {data : FooterTD}) => {  
+    
+    const sectionNavigationLinks : React.ReactNode[] = Array.from((data.section_navigation_links).map((data : SectionNavigationLinksTD) => <SectionNavigationLinks data = {data}/>));
+
+    const [selectedOption, setSelectedOption] = useState('English');
 
     const handleSelectChange = (event : any) => {
       setSelectedOption(event.target.value);
@@ -28,8 +27,8 @@ const Footer = (props : any) => {
                     </div>
                 </div>
                 <div>
-                    <NewsLetter data = {entry.newsletter}/>
-                    <Socials data = {entry.socials}/>
+                    <NewsLetter data = {data.newsletter}/>
+                    <Socials data = {data.socials}/>
                 </div>
             </div>
             <hr  className={styles.hr}/>
@@ -44,16 +43,16 @@ const Footer = (props : any) => {
                     </select>
                 </div>
                 <div className={styles.footer_cta_copyright}>
-                    <FooterCTALinks data = {entry.cta_buttons}/>
-                    <span dangerouslySetInnerHTML={{ __html: entry.trademark }} />
+                    <FooterCTALinks data = {data.cta_buttons}/>
+                    <span dangerouslySetInnerHTML={{ __html: data.copyright }} />
                 </div>
             </div>
 
             <div className={styles.copyright_logo}>
                 <div className={styles.copyright}>
-                    <span  dangerouslySetInnerHTML={{ __html: entry.copyright }} />
+                    <span  dangerouslySetInnerHTML={{ __html: data.trademark }} />
                 </div>
-                <img className={styles.elastic_logo} src={entry.logo.url} alt="alternate elastic logo" />
+                <img className={styles.elastic_logo} src={data.logo.url} alt="alternate elastic logo" />
             </div>
         </div>
     );

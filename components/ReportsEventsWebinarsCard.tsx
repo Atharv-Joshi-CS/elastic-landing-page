@@ -1,9 +1,8 @@
 import PrimaryButton from "./PrimaryButton";
 import styles from "../styles/Reports_Articles_Webinars/Reports_Articles_Webinar.module.scss"
+import { REWCardTD } from "@/utilities/type_definitions";
 
-
-const ReportsEventsWebinarsCard = (props : any) => {
-    const {data, type} = props;
+const ReportsEventsWebinarsCard = ({data,type} : {data : REWCardTD, type : string}) => {
 
     let titleStyle;
     let subtitleStyle

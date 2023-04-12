@@ -1,13 +1,6 @@
-interface ButtonProps {
-    displayText : string,
-    href : string,
-    hasArrow : boolean,
-    hasDisplayText : boolean
-    imgSrc : string
-}
+import { PrimaryButtonTD } from "@/utilities/type_definitions";
 
-const PrimaryButton = (props : ButtonProps) => {
-    const {displayText, href, hasArrow, hasDisplayText, imgSrc} = props;
+const PrimaryButton = ({displayText, href, hasArrow, hasDisplayText, imgSrc} : PrimaryButtonTD) => {
     return (
         <a className={`primary_button`} href={href}>
             <div className="primary_button_display_content">

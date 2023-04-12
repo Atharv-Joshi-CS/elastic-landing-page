@@ -1,11 +1,11 @@
 import React from "react";
 import CustomerCard from "./CustomerCard";
 import PrimaryButton from "./PrimaryButton";
+import { OurCustomersTD, CustomerCardTD } from "@/utilities/type_definitions";
 import styles from "../styles/OurCustomers/OurCustomer.module.scss";
 
-const OurCustomers = (props : any) => {
-    const {data} = props;
-    const customerCardsList : React.ReactNode[] = Array.from(data.company_card.map((customerCardJson : any) => <CustomerCard data = {customerCardJson}/>));
+const OurCustomers = ({data} : {data : OurCustomersTD}) => {
+    const customerCardsList : React.ReactNode[] = Array.from(data.company_card.map((customerCardJson : CustomerCardTD) => <CustomerCard data = {customerCardJson}/>));
     return (
     <div className={styles.ourCustomers_container}>
         <p className={styles.title}>{data.title}</p>

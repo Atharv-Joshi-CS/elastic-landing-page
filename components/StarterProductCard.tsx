@@ -1,7 +1,6 @@
 import styles from "../styles/StarterProducts/StarterProducts.module.scss";
-
-const StarterProductCard = (props : any) => {
-    const {data} = props;
+import { StarterProductCardTD } from "@/utilities/type_definitions";
+const StarterProductCard = ({data} : {data : StarterProductCardTD}) => {
     
     return (
         <div className={styles.starter_product_card}>
