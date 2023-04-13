@@ -5,7 +5,7 @@ import { OurCustomersTD, CustomerCardTD } from "@/utilities/type_definitions";
 import styles from "../styles/OurCustomers/OurCustomer.module.scss";
 
 const OurCustomers = ({data} : {data : OurCustomersTD}) => {
-    const customerCardsList : React.ReactNode[] = Array.from(data.company_card.map((customerCardJson : CustomerCardTD) => <CustomerCard data = {customerCardJson}/>));
+    const customerCardsList : React.ReactNode[] = Array.from(data.company_card.map((customerCardJson : CustomerCardTD) => <CustomerCard key={customerCardJson._metadata.uid} data = {customerCardJson}/>));
     return (
     <div className={styles.ourCustomers_container}>
         <p className={styles.title}>{data.title}</p>

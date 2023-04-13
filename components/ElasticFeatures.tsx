@@ -4,7 +4,7 @@ import styles from "../styles/ElasticFeatures/ElasticFeatures.module.scss"
 import React from "react";
 const ElasticFeatures = ({data} : {data : FeaturesOfElasticProductTD}) => {
 
-    const elasticFeaturCardComponents : React.ReactNode[]= Array.from(data.feature_description.map((card : ElasticFeatureCardTD) => <ElasticFeatureCard data = {card}/>));
+    const elasticFeaturCardComponents : React.ReactNode[]= Array.from(data.feature_description.map((card : ElasticFeatureCardTD) => <ElasticFeatureCard key={card._metadata.uid} data = {card}/>));
     
     return (
         <div className={styles.elastic_features}>

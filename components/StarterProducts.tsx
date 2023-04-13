@@ -5,7 +5,7 @@ import styles from "../styles/StarterProducts/StarterProducts.module.scss";
 
 const StarterProducts = ({data} : {data : StarterProductsTD}) => {
 
-    const productCards : React.ReactNode[] = Array.from(data.product_card.map((card : StarterProductCardTD) => <StarterProductCard data = {card}/>));
+    const productCards : React.ReactNode[] = Array.from(data.product_card.map((card : StarterProductCardTD) => <StarterProductCard key={card._metadata.uid} data = {card}/>));
     
     return (
         <div className={styles.starter_products}>

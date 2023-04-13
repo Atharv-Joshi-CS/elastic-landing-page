@@ -3,6 +3,9 @@ export interface CTAButtonTD {
     cta_link : {
         href : string, 
         title : string
+    },
+    _metadata : {
+        uid : string
     }
 }
 
@@ -61,6 +64,9 @@ export interface CustomerCardTD{
     },
     logo : {
         url : string
+    },
+    _metadata : {
+        uid : string
     }
 }
 
@@ -76,6 +82,9 @@ export interface StarterProductCardTD{
     product_name : string,
     logo : {
         url : string
+    },
+    _metadata : {
+        uid : string
     }
 }
 
@@ -110,6 +119,9 @@ export interface ElasticFeatureCardTD {
         logo : {
             url : string
         }
+    },
+    _metadata : {
+        uid : string
     }
 }
 
@@ -129,7 +141,10 @@ export interface REWCardTD{
         url : string
     },
     title : string,
-    subtitle : string
+    subtitle : string,
+    _metadata : {
+        uid : string
+    }
 }
 
 export interface ReportEventsWebinarsTD{

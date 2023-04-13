@@ -17,10 +17,10 @@ interface LandingPageData {
 const Home = ({header, footer, banner, landingPage} : LandingPageData) => {  
   return (
     <div>
-    <Header data = {header}></Header>
-    <Banner data = {banner}></Banner>
+    {/* <Header data = {header}></Header> */}
+    {/* <Banner data = {banner}></Banner> */}
     <LandingPage data = {landingPage}></LandingPage>
-    <Footer data = {footer}></Footer>
+    {/* <Footer data = {footer}></Footer> */}
     </div>
   )
 }

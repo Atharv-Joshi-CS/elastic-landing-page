@@ -39,12 +39,12 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
     </div>
 
     const featureBlock = data.video_on_left == true ? 
-    <div className={styles.feature_card}>
+    <div key={data._metadata.uid} className={styles.feature_card}>
         {featureVideo}
         {featureContent}
     </div>
     :
-    <div className={styles.feature_card}>
+    <div key={data._metadata.uid} className={styles.feature_card}>
         {featureContent}
         {featureVideo}
     </div>

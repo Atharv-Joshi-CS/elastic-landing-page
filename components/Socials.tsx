@@ -7,7 +7,7 @@ interface Socials{
 
 const Socials = ({data} : {data : SocialsTD}) => {
     
-        const cta : React.ReactNode[] = Array.from(data.cta.map((cta : {cta_link:{title : string, href : string}}) => <a className={styles.social_button} href={cta.cta_link.href}><img className={styles.logo} src={`/static/images/footer-icon-${cta.cta_link.title}.svg`} alt="social media logo" /></a> ))
+        const cta : React.ReactNode[] = Array.from(data.cta.map((cta : {cta_link:{title : string, href : string}, _metadata : {uid : string}}) => <a key={cta._metadata.uid} className={styles.social_button} href={cta.cta_link.href}><img className={styles.logo} src={`/static/images/footer-icon-${cta.cta_link.title}.svg`} alt="social media logo" /></a> ))
     return (
         <div className={styles.socials}>
         <p>{data.title}</p>
