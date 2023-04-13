@@ -1,10 +1,9 @@
 import styles from "../styles/OurCustomers/OurCustomer.module.scss";
-
-const CustomerCard = (props : any) => {
-    const {data} = props;
+import { CustomerCardTD } from "@/utilities/type_definitions";
+const CustomerCard = ({data} : {data : CustomerCardTD }) => {
     
     return (
-        <div className={styles.customer_card}>
+        <div key={data._metadata.uid} className={styles.customer_card}>
         <a href={data.link.href}>
             <img className={styles.logo} src={data.logo.url} alt="customer logo"/>
         </a>

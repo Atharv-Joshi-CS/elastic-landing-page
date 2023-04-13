@@ -1,7 +1,7 @@
+import { NewsLetterTD } from "@/utilities/type_definitions";
 import styles from "../styles/Footer/Footer.module.scss";
 
-const NewsLetter = (props : any) => {
-    const {data} = props;
+const NewsLetter = ({data} : {data : NewsLetterTD}) => {
     
     return (
         <div className={styles.newsletter}>

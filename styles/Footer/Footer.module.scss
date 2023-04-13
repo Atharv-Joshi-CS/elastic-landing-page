@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .newsletter{
@@ -101,7 +101,7 @@
     color: constants.$white;
     display: flex;
     flex-direction: column;
-align-items: end;
+    align-items: flex-end;
     span{
         color: constants.$white;
         font-size: 14px;
@@ -124,7 +124,7 @@ align-items: end;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .copyright{
@@ -159,5 +159,5 @@ align-items: end;
 .newsletter_content{
     display: flex;
     flex-direction: row ;
-    align-items: start;
+    align-items: flex-start;
 }
