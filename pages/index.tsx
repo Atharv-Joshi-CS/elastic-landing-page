@@ -1,26 +1,20 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import LandingPage from '@/components/LandingPage';
-import { HeaderTD, BannerTD, FooterTD, LandingPageTD } from '@/utilities/type_definitions';
+import {BannerTD, LandingPageTD } from '@/utilities/type_definitions';
 import {getEntries} from "../utilities/elastic_api_calls"
 
 
 interface LandingPageData {
-  header : HeaderTD,
-  footer : FooterTD,
   banner : BannerTD,
   landingPage : LandingPageTD
 }
 
 
-const Home = ({header, footer, banner, landingPage} : LandingPageData) => {  
+const Home = ({banner, landingPage} : LandingPageData) => {  
   return (
     <div>
-    <Header data = {header}></Header>
     <Banner data = {banner}></Banner>
     <LandingPage data = {landingPage}></LandingPage>
-    <Footer data = {footer}></Footer>
     </div>
   )
 }
