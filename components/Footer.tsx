@@ -4,7 +4,7 @@ import Socials from "./Socials";
 import { FooterTD, SectionNavigationLinksTD } from "@/utilities/type_definitions";
 import FooterCTALinks from "./FooterCTAButtons";
 import styles from "../styles/Footer/Footer.module.scss";
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 
 const Footer = ({data} : {data : FooterTD}) => {  
     
@@ -12,7 +12,7 @@ const Footer = ({data} : {data : FooterTD}) => {
 
     const [selectedOption, setSelectedOption] = useState('English');
 
-    const handleSelectChange = (event : any) => {
+    const handleSelectChange = (event : ChangeEvent<HTMLSelectElement>) => {
       setSelectedOption(event.target.value);
     };
     

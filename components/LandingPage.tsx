@@ -6,7 +6,6 @@ import { LandingPageTD} from "@/utilities/type_definitions";
 
 const LandingPage = ({data} : {data : LandingPageTD}) => {
     const modularBlocksJsonData : any = data.modular_blocks;
-    // console.log(data);
     
     let blocks = Array.from(modularBlocksJsonData.map((data : any) => {
         switch(Object.keys(data)[0]){
