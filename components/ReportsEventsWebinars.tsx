@@ -6,11 +6,11 @@ import styles from "../styles/Reports_Articles_Webinars/Reports_Articles_Webinar
 const ReportsEventsWebinars = ({data,type} : {data : ReportEventsWebinarsTD, type : string}) => {
 
     let rawContainer;
-    if(type == 'reports_events_webinars'){
+    if(type === 'reports_events_webinars'){
         rawContainer = styles.type1_raw_container;
-    }else if(type == 'community'){
+    }else if(type === 'community'){
         rawContainer = styles.type2_raw_container;
-    }else if(type == 'about_elastic'){
+    }else if(type === 'about_elastic'){
         rawContainer = styles.type3_raw_container;
     }
     

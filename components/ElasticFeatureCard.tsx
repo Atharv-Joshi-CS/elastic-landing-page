@@ -38,7 +38,7 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
       ></iframe> }
     </div>
 
-    const featureBlock = data.video_on_left == true ? 
+    const featureBlock = data.video_on_left === true ? 
     <div key={data._metadata.uid} className={styles.feature_card}>
         {featureVideo}
         {featureContent}
