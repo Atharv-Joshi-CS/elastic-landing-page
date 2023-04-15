@@ -13,17 +13,17 @@ interface HeaderFooterTD {
 function App({ Component, pageProps, header, footer }: AppProps & HeaderFooterTD) {
   return (
     <>
-      <Header data = {header}></Header>
+      {!header ? <></> : <Header data = {header}></Header>}
       <Component {...pageProps} />
-      <Footer data = {footer}></Footer>
+      {!footer ? <></> : <Footer data = {footer}></Footer>}
     </>
   )
 }
 
 App.getInitialProps = async () => {
   
-  const header = await getEntries('elastic_header', 'blt2b854e990c511e72', 'en-us');
-  const footer = await getEntries('footer', 'blt9dc59bcd9655739f', 'en-us');
+  const header : HeaderTD = await getEntries('elastic_header', 'blt2b854e990c511e72', 'en-us');
+  const footer : FooterTD = await getEntries('footer', 'blt9dc59bcd9655739f', 'en-us');
   
   return {
       header,

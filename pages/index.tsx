@@ -13,23 +13,19 @@ interface LandingPageData {
 const Home = ({banner, landingPage} : LandingPageData) => {  
   return (
     <div>
-    <Banner data = {banner}></Banner>
-    <LandingPage data = {landingPage}></LandingPage>
+    {!banner ? <></> : <Banner data = {banner}></Banner>}
+    {!landingPage ? <></> : <LandingPage data = {landingPage}></LandingPage>}
     </div>
   )
 }
 
 export async function getStaticProps(){
-  const header = await getEntries('elastic_header', 'blt2b854e990c511e72', 'en-us');
-  const footer = await getEntries('footer', 'blt9dc59bcd9655739f', 'en-us');
-  const banner = await getEntries('elastic_banner', 'blt7fd0565eb551d1a7', 'en-us');
-  const landingPage = await getEntries('elastic_landing_page', 'blt9794129823ec773b', 'en-us');
+  const banner : BannerTD = await getEntries('elastic_banner', 'blt7fd0565eb551d1a7', 'en-us');
+  const landingPage : LandingPageTD = await getEntries('elastic_landing_page', 'blt9794129823ec773b', 'en-us');
   
 
   return {
     "props" : {
-      header,
-      footer,
       banner,
       landingPage
     }
