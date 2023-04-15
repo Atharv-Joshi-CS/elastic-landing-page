@@ -153,10 +153,8 @@ export interface ReportEventsWebinarsTD{
     card : Array<REWCardTD>
 }
 
-export interface ModularBlocks {
-    [index: number]: OurCustomersTD | StarterProductsTD | FeaturesOfElasticProductTD | ReportEventsWebinarsTD;
-  }
+export interface ModularBlocksJSONArray extends Array<OurCustomersTD | StarterProductsTD | FeaturesOfElasticProductTD | ReportEventsWebinarsTD> {}
 
 export interface LandingPageTD{
-    modular_blocks : ModularBlocks
+    modular_blocks : ModularBlocksJSONArray
 }

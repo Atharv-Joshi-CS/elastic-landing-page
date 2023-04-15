@@ -2,10 +2,10 @@ import OurCustomers from "./OurCustomers";
 import ReportsEventsWebinars from "./ReportsEventsWebinars";
 import ElasticFeatures from "./ElasticFeatures";
 import StarterProducts from "./StarterProducts";
-import { LandingPageTD} from "@/utilities/type_definitions";
+import { LandingPageTD, ModularBlocksJSONArray} from "@/utilities/type_definitions";
 
 const LandingPage = ({data} : {data : LandingPageTD}) => {
-    const modularBlocksJsonData : any = data.modular_blocks;
+    const modularBlocksJsonData : ModularBlocksJSONArray = data.modular_blocks as ModularBlocksJSONArray;
     
     let blocks = Array.from(modularBlocksJsonData.map((data : any) => {
         switch(Object.keys(data)[0]){
