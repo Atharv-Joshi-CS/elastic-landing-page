@@ -18,7 +18,7 @@ const LandingPage = ({data} : {data : LandingPageTD}) => {
             case 'starter_products':
                 return <StarterProducts key={data.starter_products._metadata.uid} data =  {data.starter_products} />;
             default :
-                return <StarterProducts key={data.starter_products._metadata.uid} data =  {data.starter_products} />;;
+                return <></>
         }
     } ));
     return (

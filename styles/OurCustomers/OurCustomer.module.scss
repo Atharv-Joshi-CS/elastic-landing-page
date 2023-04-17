@@ -14,12 +14,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    @media (max-width:768px) {
+        margin-top: 45px;
+        padding: 80px 0px 70px 0px;
+    }
 }
 
 .title {
     @include nospacing();
     font-size: 38px;
     font-weight: 900;
+    @media (max-width:768px) {
+        font-size: 30px;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .subtitle {
@@ -28,6 +39,10 @@
     font-weight: 500;
     color: constants.$secondary-text-color;
     margin: 20px 0px;
+    @media (max-width:768px) {
+        width: 70%;
+        text-align: center;
+    }
 }
 
 .customerCardList_container{
@@ -35,6 +50,10 @@
     margin: 20px 0px;
     display: flex;
     flex-direction: row; 
+
+    @media (max-width:768px) {
+        flex-direction: column;
+    }
 
 }
 
@@ -48,6 +67,11 @@
     justify-content: center;
     &:hover{
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width:768px) {
+        margin: 10px 0px;
+        padding: 10px 25px;
     }
 }
 

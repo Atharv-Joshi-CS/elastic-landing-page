@@ -1,12 +1,15 @@
 @use "../constants";
 
 .banner_container{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 15vw;
     margin-bottom: 100px;
+    @media (max-width:768px) {
+        margin-bottom: 0px;
+    }
 }
 
 .title{
@@ -15,6 +18,11 @@
     margin: 50px 0px 0px 0px;
     color: constants.$primary-text-color;
     font-weight: 800;
+    width: 65%;
+
+    @media (max-width:768px) {
+        font-size: 30px;
+    }
 }
 
 .subtitle{
@@ -23,10 +31,18 @@
     font-size: 19px;
     padding: 0px 15vw;
     margin-bottom: 40px;
+    width: 45%;
+    @media (max-width:768px) {
+        width: 60%;
+        font-size: 17px;
+        margin-bottom: 10px;;
+    }
 }
 
 .secondary_btn{
     box-shadow: 0px 2px 5px 2px rgba(0, 0.2, 0, 0.2);
     padding: 20px 45px;
     font-size: 18px;
+    @media (max-width:768px) {
+    }
 }

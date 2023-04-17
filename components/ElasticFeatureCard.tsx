@@ -4,8 +4,17 @@ import { ElasticFeatureCardTD } from "@/utilities/type_definitions";
 
 const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
 
+    let isVideoOnLeft = data.video_on_left;
+
+    if(typeof window !== 'undefined'){
+        if(window.innerWidth <= 768){
+            isVideoOnLeft = false;
+        }
+    }
+    
+
     const featureContent =         
-    <div>
+    <div className={styles.feature_content}>
         <div>
             <div className={styles.feature_header}>
                 <img src={data.logo.url} alt=""/>
@@ -24,13 +33,12 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
         </div>
     </div>
     const featureVideo = 
-    <div>
-        {data.video != null ? 	<video width="640" height="480" autoPlay muted loop>
+    <div className={styles.feature_video}>
+        {data.video != null ? 	<video className={styles.videosize} autoPlay muted loop>
         <source src={data.video.url} type="video/mp4"/>
         Your browser does not support the video tag.
         </video> :       <iframe
-        width="640"
-        height="480"
+        className={styles.yt_videosize}
         src={`https://www.youtube.com/embed/O81-mgSkBFk`}
         title="YouTube video player"
         allow="autoplay;"
@@ -38,7 +46,7 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
       ></iframe> }
     </div>
 
-    const featureBlock = data.video_on_left === true ? 
+    const featureBlock = isVideoOnLeft === true ? 
     <div key={data._metadata.uid} className={styles.feature_card}>
         {featureVideo}
         {featureContent}
@@ -48,7 +56,7 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
         {featureContent}
         {featureVideo}
     </div>
-    
+
     return (featureBlock);
 }
 

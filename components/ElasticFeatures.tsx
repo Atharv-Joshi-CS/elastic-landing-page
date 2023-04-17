@@ -8,9 +8,9 @@ const ElasticFeatures = ({data} : {data : FeaturesOfElasticProductTD}) => {
     
     return (
         <div className={styles.elastic_features}>
-        <p className={styles.title}>{data.title}</p>
-        <p className={styles.subtitle}>{data.subtitle}</p>
-        {elasticFeaturCardComponents}
+            <p className={styles.title}>{data.title}</p>
+            <p className={styles.subtitle}>{data.subtitle}</p>
+            {elasticFeaturCardComponents}
         </div>
     );
 }

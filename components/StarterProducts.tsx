@@ -15,9 +15,9 @@ const StarterProducts = ({data} : {data : StarterProductsTD}) => {
             <div className={styles.product_cards_container}>
                 {productCards}
             </div>
-                <div className={styles.arrow_translate}>
-                    <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>
-                </div>
+            <div className={styles.arrow_translate}>
+                <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>
+            </div>
         </div>
         </div>
         );

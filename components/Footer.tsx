@@ -14,8 +14,7 @@ const Footer = ({data} : {data : FooterTD}) => {
 
     const handleSelectChange = (event : ChangeEvent<HTMLSelectElement>) => {
       setSelectedOption(event.target.value);
-    };
-    
+    };    
     return (
         <div className={styles.footer}>
             <div className={styles.footer_section1}>
@@ -26,14 +25,14 @@ const Footer = ({data} : {data : FooterTD}) => {
                         {sectionNavigationLinks[2]}
                     </div>
                 </div>
-                <div>
+                <div className={styles.newsletter_socials}>
                     <NewsLetter data = {data.newsletter}/>
                     <Socials data = {data.socials}/>
                 </div>
             </div>
             <hr  className={styles.hr}/>
             <div className={styles.language_cta}>
-                <div>
+                <div className={styles.language_container}>
                     <p>Language</p>
                     <select className={styles.language_selector} value={selectedOption} onChange={handleSelectChange}>
                         <option value="Deutsch">Deutsch</option>

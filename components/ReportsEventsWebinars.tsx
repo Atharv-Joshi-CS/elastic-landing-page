@@ -16,10 +16,12 @@ const ReportsEventsWebinars = ({data,type} : {data : ReportEventsWebinarsTD, typ
     
     const rewCardComponents : React.ReactNode[] = Array.from(data.card.map((card : REWCardTD) => <ReportsEventsWebinarsCard key={card._metadata.uid} data = {card} type = {type}/>));    
     return (
-        <div className={rawContainer}>
-            <p className={styles.section_title}>{data.title}</p>
-            <div className={styles.rawCards_container}>
-                {rewCardComponents}
+        <div className={styles.raw_outer_container}>
+            <div className={rawContainer}>
+                <p className={styles.section_title}>{data.title}</p>
+                <div className={styles.rawCards_container}>
+                    {rewCardComponents}
+                </div>
             </div>
         </div>
         );

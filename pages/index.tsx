@@ -12,7 +12,7 @@ interface LandingPageData {
 
 const Home = ({banner, landingPage} : LandingPageData) => {  
   return (
-    <div>
+    <div className='page-content'>
     {!banner ? <></> : <Banner data = {banner}></Banner>}
     {!landingPage ? <></> : <LandingPage data = {landingPage}></LandingPage>}
     </div>
