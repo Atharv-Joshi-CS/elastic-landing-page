@@ -4,9 +4,9 @@ const CustomerCard = ({data} : {data : CustomerCardTD }) => {
     
     return (
         <div key={data._metadata.uid} className={styles.customer_card}>
-        <a href={data.link.href}>
-            <img className={styles.logo} src={data.logo.url} alt="customer logo"/>
-        </a>
+        {!data.link.href ? <></> : <a href={data.link.href}>
+            {!data.logo.url ? <></> : <img className={styles.logo} src={data.logo.url} alt="customer logo"/>}
+        </a>}
         </div>
     );
 }

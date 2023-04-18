@@ -4,10 +4,10 @@ const StarterProductCard = ({data} : {data : StarterProductCardTD}) => {
     
     return (
         <div key={data._metadata.uid} className={styles.starter_product_card}>
-            <img src={data.logo.url} alt="logo"/>
+            {!data.logo.url ? <></> : <img src={data.logo.url} alt="logo"/>}
             <div className={styles.subsection}>
-                <h3 className={styles.card_title}>{data.product_name}</h3>
-                <p className={styles.card_subtitle}>{data.description}</p>
+                {!data.product_name  || data.product_name === '' ? <></> : <h3 className={styles.card_title}>{data.product_name}</h3>}
+                {!data.description || data.description === '' ? <></> : <p className={styles.card_subtitle}>{data.description}</p>}
             </div>
         </div>
     );

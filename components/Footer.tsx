@@ -8,7 +8,9 @@ import { useState, ChangeEvent } from "react";
 
 const Footer = ({data} : {data : FooterTD}) => {  
     
-    const sectionNavigationLinks : React.ReactNode[] = Array.from((data.section_navigation_links).map((data : SectionNavigationLinksTD) => <SectionNavigationLinks data = {data}/>));
+    const sectionNavigationLinks : React.ReactNode[] = Array.from(
+        (data.section_navigation_links).map(
+        (data : SectionNavigationLinksTD) => !data ? <></> : <SectionNavigationLinks data = {data}/>));
 
     const [selectedOption, setSelectedOption] = useState('English');
 
@@ -42,16 +44,16 @@ const Footer = ({data} : {data : FooterTD}) => {
                     </select>
                 </div>
                 <div className={styles.footer_cta_copyright}>
-                    <FooterCTALinks data = {data.cta_buttons}/>
-                    <span dangerouslySetInnerHTML={{ __html: data.copyright }} />
+                    {!data.cta_buttons ? <></> : <FooterCTALinks data = {data.cta_buttons}/>}
+                    {!data.copyright ? <></> :<span dangerouslySetInnerHTML={{ __html: data.copyright }} />}
                 </div>
             </div>
 
             <div className={styles.copyright_logo}>
                 <div className={styles.copyright}>
-                    <span  dangerouslySetInnerHTML={{ __html: data.trademark }} />
+                    {!data.trademark ? <></> : <span  dangerouslySetInnerHTML={{ __html: data.trademark }} />}
                 </div>
-                <img className={styles.elastic_logo} src={data.logo.url} alt="alternate elastic logo" />
+                {!data.logo.url ? <></> : <img className={styles.elastic_logo} src={data.logo.url} alt="alternate elastic logo" />}
             </div>
         </div>
     );

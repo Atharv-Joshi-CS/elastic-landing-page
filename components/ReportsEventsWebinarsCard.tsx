@@ -30,13 +30,13 @@ const ReportsEventsWebinarsCard = ({data,type} : {data : REWCardTD, type : strin
         <div className={styles.rawcard}>
             <a className={type === 'community' ? `${styles.button_alignment_center} ${styles.card_button}` :  `${styles.card_button}`} href={type === 'reports_events_webinars'  || type === 'about_elastic' ? data.link.href : ""}>
                 <div className={styles.raw_content}>
-                    <p className={styles.category}>{data.category}</p>
+                    {!data.category || data.category === '' ? <></> : <p className={styles.category}>{data.category}</p>}
                     {data.logo != null ? <img className={styles.logo} src={data.logo.url} alt="logo"/> : <></>}
-                    <p className={titleStyle}>{data.title}</p>
-                    <p className={subtitleStyle}>{data.subtitle}</p>
+                    {!data.title || data.title === '' ? <></> : <p className={titleStyle}>{data.title}</p>}
+                    {!data.subtitle || data.subtitle === '' ? <></> : <p className={subtitleStyle}>{data.subtitle}</p>}
                 </div>
                 <div className={arrowtranslateStyle}>
-                    <PrimaryButton hasDisplayText = {type === 'reports_events_webinars' || type === 'community' ? true : false} hasArrow = {true} displayText={type === 'reports_events_webinars' || type === 'community' ? data.link.title : ''} href={data.link.href} imgSrc={`/static/images/${type === 'about_elastic' ? "arrow-right-white.svg" : 'right-arrow.svg'}`}/>
+                    {!data.link.href ? <></> : <PrimaryButton hasDisplayText = {type === 'reports_events_webinars' || type === 'community' ? true : false} hasArrow = {true} displayText={type === 'reports_events_webinars' || type === 'community' ? data.link.title : ''} href={data.link.href} imgSrc={`/static/images/${type === 'about_elastic' ? "arrow-right-white.svg" : 'right-arrow.svg'}`}/>}
                 </div>
             </a>
             {isTabletMode && type === 'reports_events_webinars' ?<hr  className={styles.hr}/>: <></>}

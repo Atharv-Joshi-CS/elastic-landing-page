@@ -17,18 +17,18 @@ const ElasticFeatureCard = ({data}: {data : ElasticFeatureCardTD}) => {
     <div className={styles.feature_content}>
         <div>
             <div className={styles.feature_header}>
-                <img src={data.logo.url} alt=""/>
-                <p>{data.title}</p>
+                {!data.logo.url ? <></> : <img src={data.logo.url} alt="logo"/>}
+                {!data.title || data.title === '' ? <></> : <p>{data.title}</p>}
             </div>
-            <p className={styles.subtitle}>{data.subtitle}</p>
-            <p className={styles.description}>{data.description}</p>
-            <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>
+            {!data.subtitle || data.subtitle === '' ? <></> : <p className={styles.subtitle}>{data.subtitle}</p>}
+            {!data.description || data.description === '' ? <></> : <p className={styles.description}>{data.description}</p>}
+            {!data.cta.href || !data.cta.title ? <></> : <PrimaryButton href={data.cta.href} hasArrow = {true} hasDisplayText = {true} displayText= {data.cta.title} imgSrc="/static/images/right-arrow.svg"/>}
         </div>
         <div className={styles.testimonial}>
-            <p className={styles.value_proposition}>{data.testimonial.value_proposition}</p>
+            {!data.testimonial.value_proposition || data.testimonial.value_proposition === '' ? <></> : <p className={styles.value_proposition}>{data.testimonial.value_proposition}</p>}
             <div className={styles.logo_position}>
                 {data.testimonial.logo != null ? <img src={data.testimonial.logo.url} alt=""/> : <></>}
-                <p>{data.testimonial.employee_position}</p>
+                {!data.testimonial.employee_position || data.testimonial.employee_position === '' ? <></> : <p>{data.testimonial.employee_position}</p>}
             </div>
         </div>
     </div>

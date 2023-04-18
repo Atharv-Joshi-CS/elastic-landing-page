@@ -10,13 +10,13 @@ const LandingPage = ({data} : {data : LandingPageTD}) => {
     let blocks = Array.from(modularBlocksJsonData.map((data : any) => {
         switch(Object.keys(data)[0]){
             case 'reports_events_webinars':                
-                return <ReportsEventsWebinars key={data.reports_events_webinars._metadata.uid} data = {data.reports_events_webinars} type = {data.reports_events_webinars.block_type}/>;
+                return !data.reports_events_webinars ? <></> : <ReportsEventsWebinars key={data.reports_events_webinars._metadata.uid} data = {data.reports_events_webinars} type = {data.reports_events_webinars.block_type}/>;
             case 'our_customers':
-                return <OurCustomers key={data.our_customers._metadata.uid} data = {data.our_customers}/>;
+                return !data.our_customers ? <></> :<OurCustomers key={data.our_customers._metadata.uid} data = {data.our_customers}/>;
             case 'features_of_elastic_product':
-                return <ElasticFeatures key={data.features_of_elastic_product._metadata.uid} data = {data.features_of_elastic_product}/>;
+                return !data.features_of_elastic_product ? <></> : <ElasticFeatures key={data.features_of_elastic_product._metadata.uid} data = {data.features_of_elastic_product}/>;
             case 'starter_products':
-                return <StarterProducts key={data.starter_products._metadata.uid} data =  {data.starter_products} />;
+                return !data.starter_products ? <></> : <StarterProducts key={data.starter_products._metadata.uid} data =  {data.starter_products} />;
             default :
                 return <></>
         }
